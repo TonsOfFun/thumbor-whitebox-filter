@@ -1,0 +1,9 @@
+version: '3'
+services:
+  thumbor:
+    build: .
+    command: thumbor -p 3000
+    volumes:
+      - .:/thumbor-whitebox-filter
+    ports:
+      - "3030:3030"
