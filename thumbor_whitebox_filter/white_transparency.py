@@ -28,11 +28,7 @@ class Filter(BaseFilter):
 
         im_in = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-        # Threshold.
-        # Set values equal to or above 220 to 0.
-        # Set values below 220 to 255.
-
-        th, im_th = cv2.threshold(im_in, 220, 255, cv2.THRESH_BINARY_INV);
+        th, im_th = cv2.threshold(im_in, threshold_low, threshold_high, cv2.THRESH_BINARY_INV);
 
         # Copy the thresholded image.
         im_floodfill = im_th.copy()
